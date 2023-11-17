@@ -1,6 +1,6 @@
 {
   "name": "test-package-yoel-test",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "description": "",
   "type": "module",
   "main": "./lib/src/components/index.js",
@@ -8,8 +8,7 @@
     "prepublish": "npx tsc",
     "test": "jest",
     "tsc": "npx tsc",
-    "lint": "eslint .",
-    "prepublishOnly": "cp src/assets/icons/*.svg lib/src/assets/icons && cp src/assets/images/*.png lib/src/assets/images/"
+    "lint": "eslint ."
   },
   "files": [
     "lib/**/**/*",
