@@ -5,11 +5,6 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { isUndefined } from 'lodash/fp';
 
-import { SIZES } from '../../constants';
-import { getAutomationId } from '../../utils/ui/getAutomationId';
-
-const { BUTTON_HEIGHT } = SIZES;
-
 interface CoreProps {
   children?: ReactNode | ReactNode[];
   accessibilityLabel?: string;
@@ -31,10 +26,9 @@ function ButtonCore({
   gradientColors = ['#ff0000', '#ff0000'],
   accessibilityLabel,
   width,
-  height = BUTTON_HEIGHT,
+  height = 40,
   disabled = false,
   hitSlop,
-  automationId,
 }: CoreProps): JSX.Element {
   const $hitSlop = useMemo(() => {
     if (isUndefined(hitSlop)) {
@@ -60,8 +54,7 @@ function ButtonCore({
       {...{ disabled }}
       onPress={handlePress}
       hitSlop={$hitSlop}
-      accessibilityRole="button"
-      testID={getAutomationId(automationId, 'button')}>
+      accessibilityRole="button">
       <View
         accessible
         accessibilityRole="button"
@@ -72,7 +65,6 @@ function ButtonCore({
           {...{ width, height }}
           style={{ borderRadius: 15 }}>
           <LinearGradient
-            testID={getAutomationId(automationId, 'gradient')}
             style={{
               justifyContent: 'center',
               alignItems: 'center',
