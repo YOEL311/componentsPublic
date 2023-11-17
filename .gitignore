@@ -24,7 +24,6 @@ chrome-user-data
 *.iml
 *.swp
 *.swo
-lib
 .eslintcache
 
 packages/react-devtools-core/dist
