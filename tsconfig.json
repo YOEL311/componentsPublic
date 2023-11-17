@@ -15,6 +15,7 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "lib": ["ESNext"],
+    "module":"CommonJS",
     "moduleResolution": "node",
     "outDir": "./lib",
     "target": "ESNext",

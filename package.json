@@ -2,7 +2,7 @@
   "name": "test-package-yoel-test",
   "version": "0.0.35",
   "description": "",
-  "type": "module",
+  "type": "commonjs",
   "main": "./lib/src/components/index.js",
   "scripts": {
     "prepublish": "npx tsc",
