@@ -1,19 +1,20 @@
 {
   "name": "test-package-yoel-test",
-  "version": "0.0.36",
+  "version": "0.0.42",
   "description": "",
-  "type": "commonjs",
-  "main": "./lib/src/components/index.js",
-  "scripts": {
-    "prepublish": "npx tsc",
-    "test": "jest",
-    "tsc": "npx tsc",
-    "lint": "eslint ."
-  },
+  "main": "./dist/components/index.js",
   "files": [
-    "lib/**/**/*",
+    "dist/**/**/*",
     "mock.js"
   ],
+  "scripts": {
+    "prepublish": "yarn build",
+    "test": "jest",
+    "lint": "eslint .",
+    "build": "  mkdir -p dist && npx tsc && npx babel src --out-dir dist --extensions .js,.jsx,.ts,.tsx        --presets=@babel/preset-env,@babel/preset-react"
+  },
+  "tsc": "npx tsc",
+  "lint": "eslint .",
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -26,9 +27,12 @@
     "react-native-safe-area-context": "3.4.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.3",
     "@babel/plugin-transform-react-jsx": "7.12.17",
-    "@babel/preset-env": "7.16.0",
-    "@babel/preset-typescript": "7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
     "@react-native-community/eslint-config": "1.1.0",
     "@testing-library/react-native": "7.0.2",
     "@types/jest": "26.0.20",
@@ -85,9 +89,9 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsc --noEmit && lint-staged",
+      "pre-commit": "tsc && lint-staged",
       "pre-push": "yarn jest --bail --passWithNoTests .",
-      "pre-publish": "tsc --noEmit && lint-staged && yarn jest --bail --passWithNoTests ."
+      "pre-publish": "tsc && lint-staged && yarn jest --bail --passWithNoTests ."
     }
   }
 }

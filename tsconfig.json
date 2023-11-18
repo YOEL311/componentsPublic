@@ -15,13 +15,14 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "lib": ["ESNext"],
-    "module":"CommonJS",
+    "rootDir": "src",
+    "outDir": "dist",
     "moduleResolution": "node",
-    "outDir": "./lib",
     "target": "ESNext",
+    "emitDeclarationOnly": true,
     "typeRoots": ["./src/@types/*", "./node_modules/@types"],
   },
   "exclude": [
-    "./lib", // exclude outDir
+    "./dist" // exclude outDir
   ]
 }
