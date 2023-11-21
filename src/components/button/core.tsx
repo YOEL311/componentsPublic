@@ -5,6 +5,8 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { isUndefined } from 'lodash/fp';
 
+import { getIconByName } from '../../utils/ui/getIconByName';
+
 interface CoreProps {
   children?: ReactNode | ReactNode[];
   accessibilityLabel?: string;
@@ -34,7 +36,7 @@ function ButtonCore({
     if (isUndefined(hitSlop)) {
       return undefined;
     }
-
+    getIconByName();
     const slop: Insets = {
       top: hitSlop,
       bottom: hitSlop,

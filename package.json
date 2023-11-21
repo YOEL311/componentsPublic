@@ -11,7 +11,8 @@
     "prepublish": "yarn build",
     "test": "jest",
     "lint": "eslint .",
-    "build": "  mkdir -p dist && npx tsc && npx babel src --out-dir dist --extensions .js,.jsx,.ts,.tsx        --presets=@babel/preset-env,@babel/preset-react"
+    "build": "  mkdir -p dist && npx tsc && npx babel src --out-dir dist --extensions .js,.jsx,.ts,.tsx        --presets=@babel/preset-env,@babel/preset-react",
+    "prepublishOnly": "cp src/assets/icons/*.svg dist/assets/icons && cp src/assets/images/*.png dist/assets/images/"
   },
   "tsc": "npx tsc",
   "lint": "eslint .",
