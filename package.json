@@ -1,6 +1,6 @@
 {
   "name": "test-package-yoel-test",
-  "version": "0.0.42",
+  "version": "0.0.43",
   "description": "",
   "main": "./dist/components/index.js",
   "files": [
@@ -24,6 +24,7 @@
     "react": "18.1.0",
     "react-native": "0.70.9",
     "react-native-linear-gradient": "2.8.3",
+    "react-native-reanimated": "^3.5.4",
     "react-native-safe-area-context": "3.4.1"
   },
   "devDependencies": {
